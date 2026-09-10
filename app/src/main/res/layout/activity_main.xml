@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="QuantBacktest Engine"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingBottom="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&lt;&gt; Pine Script Strategy"
+        android:textColor="#B0BEC5"
+        android:textSize="14sp"
+        android:paddingBottom="4dp"/>
+
+    <EditText
+        android:id="@+id/etPineScript"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#1E1E1E"
+        android:gravity="top"
+        android:hint="// Enter Pine Script Strategy Here..."
+        android:textColor="#FFFFFF"
+        android:textColorHint="#757575"
+        android:textSize="13sp"
+        android:padding="12dp"
+        android:fontFamily="monospace"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📊 Historical Market Data"
+        android:textColor="#B0BEC5"
+        android:textSize="14sp"
+        android:paddingBottom="4dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#1E1E1E"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/btnUploadCsv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload CSV"/>
+
+        <TextView
+            android:id="@+id/tvCsvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" No data loaded"
+            android:textColor="#9E9E9E"
+            android:paddingStart="12dp"
+            android:textSize="13sp"/>
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <Button
+        android:id="@+id/btnRunBacktesting"
+        android:id="@+id/btnRunBacktest"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="▶ RUN BACKTEST"
+        android:textStyle="bold"
+        android:backgroundTint="#2962FF"
+        android:textColor="#FFFFFF"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="16dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#1E1E1E"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tvSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Results &amp; Trade Summary will appear here..."
+            android:textColor="#E0E0E0"
+            android:textSize="13sp"
+            android:fontFamily="monospace"/>
+    </ScrollView>
+
+</LinearLayout>
+          
