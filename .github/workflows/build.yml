@@ -18,15 +18,14 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Setup Gradle Wrapper & Build APK
+    - name: Build APK Directly
       run: |
-        # Generate gradle wrapper files if missing
-        gradle wrapper
-        chmod +x gradlew
-        
-        # Set android home and run build via wrapper
+        sudo apt-get update
+        sudo apt-get install -y gradle
         echo "sdk.dir=$ANDROID_HOME" > local.properties
-        ./gradlew assembleDebug
+        
+        # Build app module directly using gradle
+        gradle :app:assembleDebug
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
