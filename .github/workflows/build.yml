@@ -18,14 +18,14 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Build APK Directly
+    - name: Build APK Cleanly
       run: |
         sudo apt-get update
         sudo apt-get install -y gradle
         echo "sdk.dir=$ANDROID_HOME" > local.properties
         
-        # Build app module directly using gradle
-        gradle :app:assembleDebug
+        # Compile app directly
+        gradle assembleDebug
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
