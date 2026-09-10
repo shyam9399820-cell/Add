@@ -13,24 +13,16 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Set up JDK 17
-      uses: android-actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Install Android SDK & Build Tools
-      uses: android-actions/setup-android@v3
-
     - name: Compile App via Gradle
       run: |
-        # Install gradle directly on runner to bypass missing wrapper issues
         sudo apt-get update
         sudo apt-get install -y gradle
-        
-        # Create local properties required by android build
         echo "sdk.dir=$ANDROID_HOME" > local.properties
-        
-        # Run build command directly
         gradle assembleDebug
 
     - name: Upload APK Artifact
